@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siopao Sandwich Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Siopao Sandwich Menu</h1>
+            <p class="subtitle">Our Special Siopao Sandwiches!</p>
+            <div id="freebie-promo" class="freebie-promo-banner">
+                Get a Freebie when you buy 2 or more!!
+            </div>
+        </header>
+<main class="menu-items" id="mainMenu">
+        <div class="menu-item">
+            <img src="tuna.jpg" alt="Siopao Tuna Egg Sandwich" class="item-image">
+            <h2>Siopao, Tuna, Egg Sandwich</h2>
+            <p class="description">A delicious steamed bun filled with savory tuna and egg.</p>
+            <p class="price">₱25.00</p>
+            <div class="order-controls">
+                <label for="qty-tuna-egg">Qty:</label>
+                <input type="number" id="qty-tuna-egg" value="1" min="1" data-item-key="TunaEggSiopao" data-item-name="Siopao, Tuna, Egg Sandwich" data-item-price="25.00">
+                <button class="add-to-order-btn" data-item-key="TunaEggSiopao">Add to Order</button>
+            </div>
+        </div>
+<div class="menu-item">
+        <img src="spam.jpg" alt="Siopao Luncheon Sandwich" class="item-image">
+        <h2>Siopao, Luncheon Sandwich</h2>
+        <p class="description">A classic steamed bun packed with savory Luncheon meat.</p>
+        <p class="price">₱20.00</p>
+        <div class="order-controls">
+            <label for="qty-luncheon">Qty:</label>
+            <input type="number" id="qty-luncheon" value="1" min="1" data-item-key="LuncheonSiopao" data-item-name="Siopao, Luncheon Sandwich" data-item-price="20.00">
+            <button class="add-to-order-btn" data-item-key="LuncheonSiopao">Add to Order</button>
+        </div>
+    </div>
+</main>
+
+<footer id="mainFooter">
+    <button id="view-order-btn">View My Order</button>
+    <button id="view-about-btn">About Us</button>
+    <button id="view-qr-btn">Scan QR</button>
+</footer>
+
+<!-- Order Summary Modal -->
+<div id="orderSummaryModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" id="closeSummaryModal">×</span>
+        <h2>Your Current Order</h2>
+        <div id="modalOrderDetails"></div>
+        <p id="modalTotalAmount"></p>
+        <div class="modal-actions">
+            <button id="modalCheckoutBtn">Checkout</button>
+            <button id="modalClearOrderBtn">Clear Order</button>
+            <button id="modalCancelBtn">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- Checkout Section -->
+<div id="checkoutSection" class="checkout-view" style="display: none;">
+    <header>
+        <h1>Checkout</h1>
+    </header>
+    <div id="checkoutOrderSummary">
+        <h2>Order Review</h2>
+        <div id="checkoutItemsList"></div>
+        <p id="checkoutTotalAmount"></p>
+    </div>
+    <div class="checkout-actions">
+        <p>Thank you for your order!</p>
+        <button id="confirmPurchaseBtn">Confirm Purchase & Return to Menu</button>
+        <button id="cancelCheckoutBtn">Back to Menu (No Purchase)</button>
+    </div>
+</div>
+
+<!-- About Us Section -->
+<div id="aboutSection" class="about-view" style="display: none;">
+    <header>
+        <h1>About Us</h1>
+    </header>
+    <div class="about-content">
+        <h2>Sandbao</h2>
+        <p>Sandbao is an innovative food business that will be operating in STI College, offering a new take on traditional Filipino Siopao by transforming it into a sandwich. By cutting the siopao in half and filling it with different ingredients such as luncheon or egg with tuna, we provide a fresh and delicious twist that can attract students and faculty members. Competing with fellow grade 12 students, our business stands out through its affordability and quality.</p>
+
+        <h3>Our Preparations</h3>
+
+        <h4>Tuna Egg Siopao Sandwich</h4>
+        <p>We started by steaming the siopao bun for 20 minutes and boiling the egg for 10 mins and whilst that is happening, we opened a can of tuna and separated the tuna to its sauce and placed the tuna in a container, once the egg is boiled we peel it and then mix the egg with the tuna and mayo, add in a little bit of salt and pepper and that is our tuna egg for the siopao sandwich, we'll add a little bit of the tuna sauce to add flavor and that is done.</p>
+
+        <h4>Luncheon Siopao Sandwich</h4>
+        <p>Similar to tuna egg siopao sandwich, we started by steaming the siopao bun for 20 minutes and whilst that is happening, we sliced the luncheon meat into 7 to 8 pieces and then cooking it, we made the sauce by combining ketchup, soy sauce, and sugar. Once the luncheon meat is done cooking, we will mix the sauce with the luncheon meat and then cook it again by a little bit more. Once finished we will put it inside the siopao bun and possibly add a little bit of spicy tuna sauce to add flavor.</p>
+
+        <h3>Management Team</h3>
+        <div class="team-members-container">
+            <div class="team-member">
+                <h4>Catacutan, Jaeson Chad</h4>
+                <p><strong>Position:</strong> CEO</p>
+                <p><strong>Responsibilities:</strong> To organize and supervise the business.</p>
+            </div>
+            <div class="team-member">
+                <h4>Monterde, Nierey</h4>
+                <p><strong>Position:</strong> Finance Manager</p>
+                <p><strong>Responsibilities:</strong> Handle and monitor all expenses and income of the business.</p>
+            </div>
+            <div class="team-member">
+                <h4>Duyag, Lorens</h4>
+                <p><strong>Position:</strong> Food Manager</p>
+                <p><strong>Responsibilities:</strong> Handles the preparation and cooking of the food products.</p>
+            </div>
+            <div class="team-member">
+                <h4>Pilapil, Jefferson Charls</h4>
+                <p><strong>Position:</strong> Marketing Manager</p>
+                <p><strong>Responsibilities:</strong> Introduces the product and persuades customers to purchase.</p>
+            </div>
+            <div class="team-member">
+                <h4>Varona, John Patrick</h4>
+                <p><strong>Position:</strong> Food Assistant</p>
+                <p><strong>Responsibilities:</strong> To assist the food manager and inventory check.</p>
+            </div>
+            <div class="team-member">
+                <h4>Fordan, John Paul</h4>
+                <p><strong>Position:</strong> Marketing Assistant</p>
+                <p><strong>Responsibilities:</strong> To assist the marketing manager and handle the social media posts.</p>
+            </div>
+        </div>
+    </div>
+    <button id="backToMenuFromAboutBtn" class="back-to-menu-full-btn">Back to Menu</button>
+</div>
+
+
+<!-- QR Code Section -->
+<div id="qrCodeView" class="qr-view" style="display: none;">
+    <header>
+        <h1>Scan Our QR Code</h1>
+    </header>
+    <div class="qr-content">
+        <h2>Scan to Visit Our Online Menu!</h2>
+        <img id="qrCodeImage" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://rensdelsario.github.io/siopao-menu/" alt="QR Code for Menu">
+        <p><small>(Point your phone camera here once you've updated the URL and hosted the files)</small></p>
+    </div>
+    <button id="backToMenuFromQRBtn" class="back-to-menu-full-btn">Back to Menu</button>
+</div>
+</div> <!-- .app-container ends -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let currentOrder = [];
+        let _checkoutHasBeenCompleted = false;
+    
+        const mainMenu = document.getElementById('mainMenu');
+        const mainFooter = document.getElementById('mainFooter');
+        const checkoutSection = document.getElementById('checkoutSection');
+        const aboutSection = document.getElementById('aboutSection'); // New
+        const qrCodeView = document.getElementById('qrCodeView');   // New
+    
+        const tunaEggQuantityInput = document.getElementById('qty-tuna-egg');
+        const luncheonQuantityInput = document.getElementById('qty-luncheon');
+    
+        const orderSummaryModal = document.getElementById('orderSummaryModal');
+        const modalOrderDetails = document.getElementById('modalOrderDetails');
+        const modalTotalAmount = document.getElementById('modalTotalAmount');
+        const closeSummaryModalBtn = document.getElementById('closeSummaryModal');
+        const modalCheckoutBtn = document.getElementById('modalCheckoutBtn');
+        const modalClearOrderBtn = document.getElementById('modalClearOrderBtn');
+        const modalCancelBtn = document.getElementById('modalCancelBtn');
+    
+        const checkoutItemsList = document.getElementById('checkoutItemsList');
+        const checkoutTotalAmount = document.getElementById('checkoutTotalAmount');
+        const confirmPurchaseBtn = document.getElementById('confirmPurchaseBtn');
+        const cancelCheckoutBtn = document.getElementById('cancelCheckoutBtn');
+
+        // New navigation buttons
+        const viewAboutBtn = document.getElementById('view-about-btn');
+        const backToMenuFromAboutBtn = document.getElementById('backToMenuFromAboutBtn');
+        const viewQRBtn = document.getElementById('view-qr-btn');
+        const backToMenuFromQRBtn = document.getElementById('backToMenuFromQRBtn');
+    
+        const freebieDetails = {
+            name: "Get a Freebie!",
+            minSpend: 0.00, 
+            price: 0.00,
+            message: " (Freebie!)"
+        };
+    
+        function resetMenuAfterCheckout() {
+            if (_checkoutHasBeenCompleted) {
+                currentOrder = [];
+                tunaEggQuantityInput.value = "1";
+                luncheonQuantityInput.value = "1";
+                _checkoutHasBeenCompleted = false;
+                console.log("Order and quantities reset after checkout.");
+            }
+        }
+    
+        function showMainMenu() {
+            resetMenuAfterCheckout();
+            mainMenu.style.display = 'block';
+            mainFooter.style.display = 'flex'; // Footer uses flex for button layout
+            checkoutSection.style.display = 'none';
+            orderSummaryModal.style.display = 'none';
+            aboutSection.style.display = 'none';    // Hide About
+            qrCodeView.style.display = 'none';      // Hide QR
+        }
+    
+        showMainMenu(); // Initial view
+    
+        document.querySelectorAll('.add-to-order-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const itemKey = e.target.dataset.itemKey;
+                let itemName = "";
+                let itemPrice = 0;
+                let quantityInput;
+    
+                if (itemKey === "TunaEggSiopao") {
+                    itemName = tunaEggQuantityInput.dataset.itemName;
+                    itemPrice = parseFloat(tunaEggQuantityInput.dataset.itemPrice);
+                    quantityInput = tunaEggQuantityInput;
+                } else if (itemKey === "LuncheonSiopao") {
+                    itemName = luncheonQuantityInput.dataset.itemName;
+                    itemPrice = parseFloat(luncheonQuantityInput.dataset.itemPrice);
+                    quantityInput = luncheonQuantityInput;
+                }
+    
+                if (!quantityInput) {
+                    alert("Error: Could not find quantity input for the item.");
+                    return;
+                }
+    
+                const quantity = parseInt(quantityInput.value, 10);
+    
+                if (isNaN(quantity) || quantity <= 0) {
+                    alert("Invalid Quantity: Please enter a valid quantity greater than 0.");
+                    quantityInput.value = "1";
+                    return;
+                }
+    
+                const existingItem = currentOrder.find(item => item.name === itemName);
+                if (existingItem) {
+                    existingItem.quantity += quantity;
+                } else {
+                    currentOrder.push({ name: itemName, quantity: quantity, pricePerItem: itemPrice });
+                }
+    
+                alert(`${quantity} x ${itemName} added to your order.`);
+                quantityInput.value = "1";
+                console.log("Current Order:", currentOrder);
+            });
+        });
+    
+        document.getElementById('view-order-btn').addEventListener('click', () => {
+            if (currentOrder.length === 0) {
+                alert("Empty Order: Your order is currently empty. Add some siopao!");
+                return;
+            }
+            displayOrderInModal();
+            orderSummaryModal.style.display = 'flex';
+        });
+    
+        function calculatePaidItemsSubtotal(order) {
+            return order.reduce((total, item) => total + (item.quantity * item.pricePerItem), 0);
+        }
+
+        function calculateTotalItems(order) {
+            return order.reduce((total, item) => total + item.quantity, 0);
+        }
+    
+        function displayOrderInModal() {
+            modalOrderDetails.innerHTML = '';
+            let paidItemsSubtotal = calculatePaidItemsSubtotal(currentOrder);
+            let totalItems = calculateTotalItems(currentOrder);
+            let orderItemsToDisplay = [...currentOrder];
+    
+            // Updated freebie logic to match "buy 2 or more"
+            if (totalItems >= 2) {
+                orderItemsToDisplay.push({
+                    name: freebieDetails.name,
+                    quantity: 1,
+                    pricePerItem: freebieDetails.price,
+                    isFreebie: true
+                });
+            }
+    
+            if (orderItemsToDisplay.length === 0) {
+                modalOrderDetails.innerHTML = '<p>Your order is empty.</p>';
+            } else {
+                orderItemsToDisplay.forEach(item => {
+                    const itemTotalPrice = item.quantity * item.pricePerItem;
+                    const itemElement = document.createElement('p');
+                    let itemText = `${item.quantity} x ${item.name} (@ ₱${item.pricePerItem.toFixed(2)} each) = ₱${itemTotalPrice.toFixed(2)}`;
+                    if (item.isFreebie) {
+                        itemElement.classList.add('freebie-item-text');
+                        itemText += ` ${freebieDetails.message}`;
+                    }
+                    itemElement.textContent = itemText;
+                    modalOrderDetails.appendChild(itemElement);
+                });
+            }
+            modalTotalAmount.textContent = `Total Amount (Payable): ₱${paidItemsSubtotal.toFixed(2)}`;
+        }
+    
+        closeSummaryModalBtn.addEventListener('click', () => {
+            orderSummaryModal.style.display = 'none';
+        });
+        modalCancelBtn.addEventListener('click', () => {
+            orderSummaryModal.style.display = 'none';
+        });
+    
+        modalClearOrderBtn.addEventListener('click', () => {
+            currentOrder = [];
+            alert("Order Cleared: Your order has been cleared.");
+            orderSummaryModal.style.display = 'none';
+            console.log("Order cleared.");
+        });
+    
+        modalCheckoutBtn.addEventListener('click', () => {
+            orderSummaryModal.style.display = 'none';
+            proceedToCheckout();
+        });
+    
+        function proceedToCheckout() {
+            mainMenu.style.display = 'none';
+            mainFooter.style.display = 'none';
+            aboutSection.style.display = 'none';    // Hide About
+            qrCodeView.style.display = 'none';      // Hide QR
+            checkoutSection.style.display = 'block';
+    
+            checkoutItemsList.innerHTML = '';
+            let paidItemsSubtotal = calculatePaidItemsSubtotal(currentOrder);
+            let totalItems = calculateTotalItems(currentOrder);
+            let orderItemsToDisplay = [...currentOrder];
+    
+             // Updated freebie logic to match "buy 2 or more"
+            if (totalItems >= 2) {
+                orderItemsToDisplay.push({
+                    name: freebieDetails.name,
+                    quantity: 1,
+                    pricePerItem: freebieDetails.price,
+                    isFreebie: true
+                });
+            }
+    
+            if (orderItemsToDisplay.length === 0) {
+                checkoutItemsList.innerHTML = '<p>Your order is empty.</p>';
+            } else {
+                orderItemsToDisplay.forEach(item => {
+                    const itemTotalPrice = item.quantity * item.pricePerItem;
+                    const itemElement = document.createElement('p');
+                    let itemText = `${item.quantity} x ${item.name} - ₱${itemTotalPrice.toFixed(2)}`;
+                     if (item.isFreebie) {
+                        itemElement.classList.add('freebie-item-text');
+                        itemText += ` ${freebieDetails.message}`;
+                    }
+                    itemElement.textContent = itemText;
+                    checkoutItemsList.appendChild(itemElement);
+                });
+            }
+            checkoutTotalAmount.textContent = `Total to Pay: ₱${paidItemsSubtotal.toFixed(2)}`;
+            console.log("Proceeding to checkout. Paid subtotal:", paidItemsSubtotal, "Order for display:", orderItemsToDisplay);
+        }
+    
+        confirmPurchaseBtn.addEventListener('click', () => {
+            alert("Checkout Complete! Thank you for your order. You will be returned to the main menu.");
+            _checkoutHasBeenCompleted = true;
+            showMainMenu();
+            console.log("Purchase confirmed. Checkout completed.");
+        });
+    
+        cancelCheckoutBtn.addEventListener('click', () => {
+            _checkoutHasBeenCompleted = false; // Ensure no reset if checkout is cancelled
+            showMainMenu();
+            console.log("Checkout cancelled. Returning to menu.");
+        });
+
+        // New Navigation Logic
+        viewAboutBtn.addEventListener('click', () => {
+            mainMenu.style.display = 'none';
+            mainFooter.style.display = 'none';
+            checkoutSection.style.display = 'none';
+            orderSummaryModal.style.display = 'none';
+            qrCodeView.style.display = 'none';
+            aboutSection.style.display = 'block';
+        });
+
+        backToMenuFromAboutBtn.addEventListener('click', showMainMenu);
+
+        viewQRBtn.addEventListener('click', () => {
+            mainMenu.style.display = 'none';
+            mainFooter.style.display = 'none';
+            checkoutSection.style.display = 'none';
+            orderSummaryModal.style.display = 'none';
+            aboutSection.style.display = 'none';
+            qrCodeView.style.display = 'block';
+        });
+
+        backToMenuFromQRBtn.addEventListener('click', showMainMenu);
+    
+        window.addEventListener('click', (event) => {
+            if (event.target === orderSummaryModal) {
+                orderSummaryModal.style.display = 'none';
+            }
+        });
+    });
+</script>
+</body>
+</html>

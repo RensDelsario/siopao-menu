@@ -1,0 +1,446 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #FDF5E6; /* Light warm beige for overall page */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.app-container {
+    background-color: #ffffff; /* White for main content area */
+    max-width: 450px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+header h1 {
+    font-family: 'Georgia', 'Times New Roman', Times, serif; /* Classic serif font for main title */
+    font-size: 2em; /* Slightly larger */
+    margin: 0 0 10px 0;
+    color: #4A3B48; /* Dark, slightly muted purple/brown */
+}
+
+.subtitle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em; /* Slightly larger */
+    color: #555;
+    margin: 0 0 15px 0; /* More space before promo */
+}
+
+.freebie-promo-banner {
+    background-color: #FFFACD; /* LemonChiffon - light yellow */
+    color: #8B4513; /* SaddleBrown - dark brown text */
+    padding: 10px 15px;
+    margin-top: 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.95em;
+    border: 1px solid #F0E68C; /* Khaki border */
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.menu-items {
+    padding: 15px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.menu-item {
+    background-color: #fff;
+    border: 1px solid #ddd; /* Lighter border */
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px; /* More spacing */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Softer shadow */
+}
+
+.item-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.menu-item h2 {
+    font-family: 'Georgia', serif; /* Consistent with main title style */
+    font-size: 1.5em; /* Larger item title */
+    margin: 0 0 8px 0;
+    color: #5D4037; /* Brownish color for item titles */
+}
+
+.menu-item .description {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.menu-item .price {
+    font-family: 'Georgia', serif;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #D32F2F; /* Classic menu red for price */
+    margin-bottom: 15px;
+    text-align: right; /* Align price to the right */
+}
+
+.order-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order-controls label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95em;
+    margin-right: 8px;
+    color: #444;
+}
+
+.order-controls input[type="number"] {
+    width: 50px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    margin-right: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- BUTTON STYLING --- */
+.add-to-order-btn,
+.modal-actions button,
+.checkout-actions button,
+.back-to-menu-full-btn,
+footer#mainFooter button {
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    margin-top: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modal-actions button,
+.checkout-actions button {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* Primary Action Buttons: Red */
+.add-to-order-btn,
+button#modalCheckoutBtn,
+button#confirmPurchaseBtn,
+footer#mainFooter button#view-order-btn {
+    background-color: #C62828; /* Strong Red */
+}
+.add-to-order-btn:hover,
+button#modalCheckoutBtn:hover,
+button#confirmPurchaseBtn:hover,
+footer#mainFooter button#view-order-btn:hover {
+    background-color: #A92222; /* Darker Red */
+}
+
+/* Secondary Navigation Buttons in Footer: SlateBlue */
+footer#mainFooter button#view-about-btn,
+footer#mainFooter button#view-qr-btn {
+    background-color: #6A5ACD; /* SlateBlue */
+}
+footer#mainFooter button#view-about-btn:hover,
+footer#mainFooter button#view-qr-btn:hover {
+    background-color: #483D8B; /* DarkSlateBlue */
+}
+
+/* Neutral/Destructive Modal Buttons: Grey */
+#modalClearOrderBtn,
+.modal-actions button#modalCancelBtn {
+    background-color: #757575;
+}
+#modalClearOrderBtn:hover,
+.modal-actions button#modalCancelBtn:hover {
+    background-color: #616161;
+}
+
+/* Safe Return / Back to Menu Buttons: Green */
+.back-to-menu-full-btn, /* For About, QR views */
+#cancelCheckoutBtn /* In Checkout view */ {
+    background-color: #4CAF50; /* Green */
+}
+.back-to-menu-full-btn:hover,
+#cancelCheckoutBtn:hover {
+    background-color: #388E3C; /* Darker Green */
+}
+
+
+footer#mainFooter {
+    padding: 15px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: #fff;
+}
+footer#mainFooter button {
+    flex-grow: 1;
+    padding: 10px 5px; /* Keep padding as is or adjust if text overflows */
+    margin-top: 0; /* Reset margin-top for footer buttons */
+    text-align: center;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: left;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal h2 { /* For 'Your Current Order' */
+    font-family: 'Georgia', serif;
+    font-size: 1.5em;
+    color: #5D4037; /* Brownish color */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+#modalOrderDetails p,
+#checkoutItemsList p {
+    margin: 8px 0; /* Increased margin */
+    font-size: 1em; /* Slightly larger for readability */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.4;
+}
+
+#modalTotalAmount,
+#checkoutTotalAmount {
+    font-family: 'Georgia', serif; /* Use heading font for emphasis */
+    font-weight: bold;
+    font-size: 1.2em; /* Slightly larger */
+    margin-top: 20px; /* More space above total */
+    color: #D32F2F; /* Consistent with item price color (Red) */
+}
+
+.freebie-item-text {
+    color: #1565C0; /* A strong blue for freebie text */
+    font-style: italic;
+    font-weight: 500;
+}
+
+.modal-actions {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.checkout-view,
+.about-view,
+.qr-view {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.checkout-view header,
+.about-view header,
+.qr-view header {
+    text-align: center;
+    margin-bottom: 10px; /* Reduced bottom margin for a tighter header connection */
+}
+
+.checkout-view header h1,
+.about-view header h1,
+.qr-view header h1 {
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    font-size: 2em;
+    margin: 0 0 5px 0;
+    color: #4A3B48; /* Consistent dark purple/brown */
+}
+
+/* --- About Us Section --- */
+.about-content {
+    padding: 0 10px; /* Add some horizontal padding */
+    text-align: left;
+}
+.about-content h2 { /* For "Sandbao" */
+    font-family: 'Georgia', serif;
+    font-size: 1.6em;
+    color: #5D4037; /* Brownish */
+    margin-top: 10px; /* Space from header */
+    margin-bottom: 15px;
+    text-align: center;
+}
+.about-content h3 { /* For "Our Preparations", "Management Team" */
+    font-family: 'Georgia', serif;
+    font-size: 1.3em;
+    color: #795548; /* Lighter Brown */
+    margin-top: 25px;
+    margin-bottom: 15px; /* Increased margin for spacing before team members */
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+.about-content h4 { /* For "Tuna Egg...", "Luncheon..." AND Team Member Names */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #3E2723; /* Darker brown */
+    margin-top: 20px; /* Default top margin */
+    margin-bottom: 8px;
+}
+.about-content p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* Styling for Management Team */
+.team-members-container {
+    margin-top: 10px; /* Space below "Management Team" h3 */
+}
+.team-member {
+    background-color: #f9f9f9; /* Light grey background for each member card */
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.team-member h4 { /* Specifically for team member names */
+    font-family: 'Georgia', serif; /* Match other heading styles */
+    font-size: 1.2em; /* Slightly larger for names */
+    color: #5D4037; /* Brownish color */
+    margin-top: 0; /* Remove default top margin as it's inside a card */
+    margin-bottom: 8px;
+}
+.team-member p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 5px; /* Tighter spacing within team member card */
+}
+.team-member p:last-child {
+    margin-bottom: 0; /* No bottom margin for the last paragraph in the card */
+}
+.team-member p strong {
+    color: #333; /* Darker text for "Position:" and "Responsibilities:" */
+}
+
+
+#checkoutOrderSummary {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+#checkoutOrderSummary h2 { /* For "Order Review" */
+    font-family: 'Georgia', serif;
+    font-size: 1.4em; /* Larger */
+    color: #5D4037; /* Brownish color */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.checkout-actions {
+    text-align: center;
+}
+
+.checkout-actions p { /* For "Thank you for your order!" */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1em;
+    color: #388E3C; /* Green for positive message */
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* --- QR Code View Styling --- */
+.qr-content {
+    text-align: center;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+.qr-content h2 { /* Specifically for the h2 inside qr-content */
+    font-family: 'Georgia', serif;
+    font-size: 1.3em;
+    margin-top: 0;
+    color: #5D4037; /* Brownish */
+    margin-bottom: 15px;
+}
+.qr-content img#qrCodeImage {
+    display: block;
+    margin: 10px auto;
+    border: 3px solid white;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    max-width: 200px;
+    width: 100%;
+}
+.qr-content p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.85em;
+    color: #757575; /* Grey for informational text */
+    margin-bottom: 0;
+}
+
+/* Back to Menu Button for Full Views (About, QR) */
+.back-to-menu-full-btn {
+    display: block;
+    width: calc(100% - 30px);
+    max-width: 300px;
+    margin: 20px auto 0 auto;
+    padding: 12px 15px;
+    font-size: 1em;
+}
